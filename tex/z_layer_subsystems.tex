@@ -1,39 +1,35 @@
-In this section, the layer is described in terms of the hardware and software design. Specific implementation details, such as hardware components, programming languages, software dependencies, operating systems, etc. should be discussed. Any unnecessary items can be ommitted (for example, a pure software module without any specific hardware should not include a hardware subsection). The organization, titles, and content of the sections below can be modified as necessary for the project.
+Since web service API and  Database are hosted on Cloud service, no hardware is required. This section will discuss API tool platforms and databases.
 
-\subsection{Layer Hardware}
-A description of any involved hardware components for the layer. For example, if each subsystem is a software process running on an embedded computer, discuss the specifics of that device here. Do not list a hardware component that only exists at the subsystem level (include it in the following sections).
-
-\subsection{Layer Operating System}
-A description of any operating systems required by the layer.
-
-\subsection{Layer Software Dependencies}
-A description of any software dependencies (libraries, frameworks, etc) required by the layer.
-
-\subsection{Subsystem 1}
-Descibe at a high level the purpose and basic design of this subsystem. Is it a piece of hardware, a class, a web service, or something else? Note that each of the subsystem items below are meant to be specific to that subystem and not a repeat of anything discussed above for the overall layer.
+\subsection{Web Service API}
+API is an application interface that integrates two applications or systems to support the transfer of data to each other. Mulesoft is a platform where provides many convenient functions to build and deploy API. Using Mulesoft make it easier to connect MySQL.
 
 \begin{figure}[h!]
 	\centering
- 	\includegraphics[width=0.60\textwidth]{images/subsystem}
+ 	\includegraphics[width=0.60\textwidth]{images/web_layer.PNG}
  \caption{Example subsystem description diagram}
 \end{figure}
 
-\subsubsection{Subsystem Hardware}
-A description of any involved hardware components for the subsystem.
+\subsubsection{Web Service API Software Dependencies}
+MuleSoft Exchange provides many dependencies and other APIs that are needed to build our API through a connector that prebuilds connectivity to an endpoint. 
 
-\subsubsection{Subsystem Operating System}
-A description of any operating systems required by the subsystem.
+\subsubsection{Web Service API Programming Languages}
+DataWeave is the MuleSoft expression language for accessing and transforming data that travels through a Mule app. 
 
-\subsubsection{Subsystem Software Dependencies}
-A description of any software dependencies (libraries, frameworks, design software for mechanical parts or circuits, etc) required by the subsystem.
+\subsubsection{Web Service API Data Structures}
+MuleSoft Design Center has a function called API specification which helps to define incoming and output data format and creates automated documentation for the APIs. Through API specification, the general structure of API will be provided.
 
-\subsubsection{Subsystem Programming Languages}
-A description of any programming languages used by the subsystem.
-
-\subsubsection{Subsystem Data Structures}
-A description of any classes or other data structures that are worth discussing for the subsystem. For example, data being transmitted from a microcontroller to a PC via USB should be first be assembled into packets. What is the structure of the packets?
-
-\subsubsection{Subsystem Data Processing}
-A description of any algorithms or processing strategies that are worth discussing for the subsystem. If you are implementing a well-known algorithm, list it. If it is something unique to this project, discuss it in greater detail.
+\subsubsection{Web Service API Data Processing}
+API will listen to HTTP requests and based on a certain path, it will retrieve data from the database and return it to the user. 
 
 
+\subsection{Database}
+The online database allows you to store sensor readings from the ESP32 and read from anywhere in the world by accessing your server domain.
+\subsubsection{Database Programming Languages}
+A query is used to communicate with the database. 
+
+\subsubsection{Database Data Structures}
+There are some required tables that the database has to have such as temperature for each component and recipe. 
+
+\subsubsection{Database Data Processing}
+
+The database will Run the query for requests and return the data to API.
